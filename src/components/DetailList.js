@@ -25,16 +25,17 @@ const DetailList = (props) => {
     <>
       {props.countList &&
         props.countList.map((item, i) => (
-          <div key={i} className="test">
-            <h1></h1>
+          <div key={i} className="ListDiv">
+            <h3>#{i + 1}</h3>
+
             <input
               className="Input"
               onFocus={() => {
                 onAddDetailBox(i);
               }}
-              onBlur={() => {
-                onRemoveDetailBox(i);
-              }}
+              // onBlur={() => {
+              //   onRemoveDetailBox(i);
+              // }}
               placeholder="input"
             />
           </div>

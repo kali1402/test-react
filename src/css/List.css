@@ -37,9 +37,10 @@
 .Input {
   text-align: center;
   padding: 5px;
+  width: auto;
 }
 
-.test {
+.ListDiv {
   display: inline-block;
   width: auto;
   height: 100%;

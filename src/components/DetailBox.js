@@ -8,7 +8,7 @@ const DetailBox = (props) => {
     <>
       {props.count &&
         props.count.map((item, i) => (
-          <>
+          <div key={i}>
             <div id="btnDetailDiv">
               <p>
                 <Button>
@@ -24,7 +24,7 @@ const DetailBox = (props) => {
               </p>
             </div>
             <div key={i} id="DetailBoxDiv">
-              <h1>{props.id}번 박스</h1>
+              <h1>{props.id + 1}번 박스</h1>
               <div>
                 <button
                   onClick={(e) => {
@@ -80,7 +80,7 @@ const DetailBox = (props) => {
                 <div className="contentDiv">5차설명</div>
               </div>
             </div>
-          </>
+          </div>
         ))}
     </>
   );
