@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Input } from "antd";
 import DetailBox from "./DetailBox";
 
 const DetailList = (props) => {
@@ -21,23 +20,25 @@ const DetailList = (props) => {
     setId(i);
     console.log(`포커스 풀었습니다.${i}`);
   };
+
   return (
     <>
-      <div>
-        {props.countList &&
-          props.countList.map((item, i) => (
-            <div key={i}>
-              <Input
-                onFocus={() => {
-                  onAddDetailBox(i);
-                }}
-                onBlur={() => {
-                  onRemoveDetailBox(i);
-                }}
-              />
-            </div>
-          ))}
-      </div>
+      {props.countList &&
+        props.countList.map((item, i) => (
+          <div key={i} className="test">
+            <h1></h1>
+            <input
+              className="Input"
+              onFocus={() => {
+                onAddDetailBox(i);
+              }}
+              onBlur={() => {
+                onRemoveDetailBox(i);
+              }}
+              placeholder="input"
+            />
+          </div>
+        ))}
       <DetailBox count={count} id={id} />
     </>
   );

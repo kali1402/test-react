@@ -21,6 +21,7 @@
   left: 0%;
   width: 80%;
   overflow: auto;
+  white-space: nowrap;
   height: 90%;
 }
 
@@ -31,4 +32,18 @@
   border-top: 1px solid gray;
   width: 20%;
   height: 100%;
+}
+
+.Input {
+  text-align: center;
+  padding: 5px;
+}
+
+.test {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid gray;
 }

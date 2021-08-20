@@ -40,7 +40,7 @@ const List = () => {
       </div>
       <div>
         <div id="listDiv">
-          <DetailList countList={countList} />
+          <DetailList countList={countList} id="DetailList" />
         </div>
       </div>
     </>
