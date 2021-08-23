@@ -9,7 +9,7 @@ const DetailBox = (props) => {
       {props.count &&
         props.count.map((item, i) => (
           <div key={i}>
-            <div id="btnDetailDiv">
+            {/* <div id="btnDetailDiv">
               <p>
                 <Button>
                   <PlusCircleOutlined />
@@ -22,7 +22,7 @@ const DetailBox = (props) => {
                   삭제
                 </Button>
               </p>
-            </div>
+            </div> */}
             <div key={i} id="DetailBoxDiv">
               <h1>{props.id + 1}번 박스</h1>
               <div>

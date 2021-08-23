@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Button } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 import DetailList from "./DetailList";
+import { connect } from "react-redux";
 import "../css/List.css";
 
-const List = () => {
+const List = ({ selectOption }) => {
+  console.log("selectOption: " + selectOption);
   const [countList, setCountList] = useState([]);
 
   const onAddDetailDiv = () => {
@@ -22,6 +24,7 @@ const List = () => {
     }
     setCountList(countArr);
   };
+
   return (
     <>
       <div id="btnDiv">
@@ -47,4 +50,8 @@ const List = () => {
   );
 };
 
-export default List;
+const mapStateToProps = (state) => {
+  return { selectOption: state.selectOption };
+};
+
+export default connect(mapStateToProps)(List);

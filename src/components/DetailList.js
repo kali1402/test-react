@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { selectOption } from "../actions";
 import DetailBox from "./DetailBox";
 
 const DetailList = (props) => {
@@ -20,7 +22,7 @@ const DetailList = (props) => {
     setId(i);
     console.log(`포커스 풀었습니다.${i}`);
   };
-
+  console.log(props); // 잘 들어왔는지 확인
   return (
     <>
       {props.countList &&
@@ -33,6 +35,7 @@ const DetailList = (props) => {
               onFocus={() => {
                 onAddDetailBox(i);
               }}
+              onClick={() => props.selectOption(i + 1)}
               // onBlur={() => {
               //   onRemoveDetailBox(i);
               // }}
@@ -45,4 +48,10 @@ const DetailList = (props) => {
   );
 };
 
-export default DetailList;
+const mapStateToProps = (state) => {
+  return { num: state.num };
+};
+
+export default connect(mapStateToProps, {
+  selectOption,
+})(DetailList);
